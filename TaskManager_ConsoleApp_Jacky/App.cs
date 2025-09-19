@@ -8,8 +8,8 @@ namespace TaskManager_ConsoleApp_Jacky
 {
     internal class App
     {
-        TaskManager taskManager = new TaskManager();
-        TaskRenderer taskRenderer = new TaskRenderer();
+        TaskManager Manager = new TaskManager();
+        TaskRenderer Display = new TaskRenderer();
 
         public void Initialize()
         {
@@ -22,9 +22,7 @@ namespace TaskManager_ConsoleApp_Jacky
 
             while (notExit)
             {
-                TaskManager manager = new TaskManager();
-                TaskRenderer display = new TaskRenderer();
-                display.DisplayMainMenu();
+                Display.DisplayMainMenu();
 
                 var createAction = Console.ReadLine();
 
@@ -34,21 +32,21 @@ namespace TaskManager_ConsoleApp_Jacky
                         string taskTitle, taskDescription, taskStatus;
                         DateTime taskDueDate;
 
-                        display.DisplayCreateItemMenu();
+                        Display.DisplayCreateItemMenu();
 
-                        display.DisplayTitleInput();
+                        Display.DisplayTitleInput();
                         taskTitle = Console.ReadLine();
 
-                        display.DisplayDescriptionInput();
+                        Display.DisplayDescriptionInput();
                         taskDescription = Console.ReadLine();
 
-                        display.DisplayDueDateInput();
+                        Display.DisplayDueDateInput();
                         taskDueDate = DateTime.Parse(Console.ReadLine());
 
-                        display.DisplayStatusOption();
+                        Display.DisplayStatusOption();
                         taskStatus = Console.ReadLine();
 
-                        manager.CreateTask(taskTitle, taskDescription, taskDueDate, taskStatus);
+                        Manager.CreateTask(taskTitle, taskDescription, taskDueDate, taskStatus);
                         break;
                     case "2":
                         Console.WriteLine("You chose not to create");
