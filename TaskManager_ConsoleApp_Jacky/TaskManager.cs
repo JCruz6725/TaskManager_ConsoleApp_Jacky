@@ -10,10 +10,10 @@ namespace TaskManager_ConsoleApp_Jacky
     {
         private List<TaskItem> TaskCollection = new();
 
-        public void CreateTask(string title, string description, DateTime dueDate)
+        public void CreateTask(string title, string description, DateTime dueDate, string status)
         {
             //List<TaskItem> TaskCollection = new List<TaskItem>();
-            TaskItem item = new TaskItem(title, description, dueDate);
+            TaskItem item = new TaskItem(title, description, dueDate, status);
             TaskCollection.Add(item);
         }
 

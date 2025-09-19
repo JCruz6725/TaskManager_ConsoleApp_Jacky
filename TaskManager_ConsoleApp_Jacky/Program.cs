@@ -17,11 +17,24 @@
                 switch(createAction)
                 {
                     case "1":
-                        Console.WriteLine("You chose to create!");
-                        ItemDetails _itemDetails = new ItemDetails();
-                        _itemDetails = display.DisplayInputItemDetails();
+                        string taskTitle, taskDescription, taskStatus;
+                        DateTime taskDueDate;
 
-                        manager.CreateTask(_itemDetails._taskName, _itemDetails._taskDescription, DateTime.Parse(_itemDetails._taskDueDate));
+                        display.DisplayCreateItemMenu();
+
+                        display.DisplayTitleInput();
+                        taskTitle = Console.ReadLine();
+
+                        display.DisplayDescriptionInput();
+                        taskDescription = Console.ReadLine();
+
+                        display.DisplayDueDateInput();
+                        taskDueDate = DateTime.Parse(Console.ReadLine());
+
+                        display.DisplayStatusOption();
+                        taskStatus = Console.ReadLine();
+
+                        manager.CreateTask(taskTitle, taskDescription, taskDueDate, taskStatus);
                         break;
                     case "2":
                         Console.WriteLine("You chose not to create");

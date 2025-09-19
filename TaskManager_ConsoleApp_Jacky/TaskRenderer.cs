@@ -6,12 +6,6 @@ using System.Threading.Tasks;
 
 namespace TaskManager_ConsoleApp_Jacky
 {
-    public struct ItemDetails
-    {
-        public string _taskName;
-        public string _taskDueDate;
-        public string _taskDescription;
-    }
     public class TaskRenderer
     {
         
@@ -28,21 +22,35 @@ namespace TaskManager_ConsoleApp_Jacky
 
         }
 
-        public ItemDetails DisplayInputItemDetails()
+        public void DisplayCreateItemMenu()
         {
-            ItemDetails _itemDetails = new ItemDetails();
             Console.WriteLine("=======================");
             Console.WriteLine("=  Create To-Do Item  =");
             Console.WriteLine("=======================");
-            Console.WriteLine("Enter in Task Name: ");
-            _itemDetails._taskName = Console.ReadLine();
-            Console.WriteLine("Enter in Task Due Date (ex. Jan 1, 2009): ");
-            _itemDetails._taskDueDate = Console.ReadLine();
-            Console.WriteLine("Enter in Task Description: ");
-            _itemDetails._taskDescription = Console.ReadLine();
-
-            return _itemDetails;
         }
+
+        public void DisplayTitleInput()
+        {
+            Console.WriteLine("Enter in Task Name: ");
+        }
+
+        public void DisplayDescriptionInput()
+        {
+            Console.WriteLine("\nEnter in Task Description: ");
+        }
+
+        public void DisplayDueDateInput()
+        {
+            Console.WriteLine("\nEnter in Task Due Date (ex. Jan 1, 2009): ");
+        }
+
+        public void DisplayStatusOption()
+        {
+            Console.WriteLine("\nChoose the status of your task: ");
+            Console.WriteLine("1. Open\n2. Closed\n");
+            Console.WriteLine("Enter 1 or 2: ");
+        }
+
 
         public void DisplayAll(List<TaskItem> allTasks)
         {

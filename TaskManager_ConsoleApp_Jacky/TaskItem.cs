@@ -20,13 +20,13 @@ namespace TaskManager_ConsoleApp_Jacky
 
         //create unique taskid (guid)
 
-        public TaskItem(string title, string description, DateTime dueDate)
+        public TaskItem(string title, string description, DateTime dueDate, string status)
         {
             Id = Guid.NewGuid();
             this.Title = title;
             this.Description = description;
             this.DueDate = dueDate;
-            Status = null;
+            this.Status = status;
             CreatedDate = DateTime.Now;
         }
     }
