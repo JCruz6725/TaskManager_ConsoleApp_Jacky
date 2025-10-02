@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace TaskManager_ConsoleApp_Jacky.MenuRender
 {
-    internal class EditDescriptionMenu
+    internal class EditDescriptionMenu : MenuComponent
     {
+        public EditDescriptionMenu(string headerTitle, List<string> data, string inputFooter) { }
+        public override void DisplayData() { }
+        public override void DisplayInputFooter() { }
     }
 }

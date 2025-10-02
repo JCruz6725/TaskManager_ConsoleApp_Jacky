@@ -4,9 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TaskManager_ConsoleApp_Jacky
+namespace TaskManager_ConsoleApp_Jacky.MenuRender
 {
-    internal class CreateToDoMenu
+    internal class CreateToDoMenu :MenuComponent
     {
+        private string InputFooter2;
+        private string InputFooter3;
+
+        public CreateToDoMenu(string headerTitle, string inputFooter, string inputFooter2, string inputFooter3) { }
+        public override void DisplayInputFooter() { }
+        public override void DisplayInputFooter2() { }
+        public override void DisplayInputFooter3() { }
     }
 }

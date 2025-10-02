@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace TaskManager_ConsoleApp_Jacky
 {
-    internal class App
+    public class App
     {
+        TaskManager Manager = new TaskManager();
+        TaskRenderer Display = new TaskRenderer();
+
+        public void initialize() { }
+
+        public void MainLoop()
+        {
+
+        }
+
+        public void Shutdown() { }
     }
 }

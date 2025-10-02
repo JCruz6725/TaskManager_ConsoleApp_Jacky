@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace TaskManager_ConsoleApp_Jacky.MenuRender
 {
-    internal class RemoveMenu
+    internal class RemoveMenu : MenuComponent
     {
+        public RemoveMenu(string headerTitle, List<string> data, string inputFooter) { }
+        public override void DisplayData() { }
+        public override void DisplayInputFooter() { }
     }
 }

@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TaskManager_ConsoleApp_Jacky
+namespace TaskManager_ConsoleApp_Jacky.MenuRender
 {
-    internal class EditNameMenu
+    internal class EditNameMenu : MenuComponent
     {
+        public EditNameMenu(string headerTitle, List<string> data, string inputFooter) { }
+        public override void DisplayData() { }
+        public override void DisplayInputFooter() { }
     }
 }
