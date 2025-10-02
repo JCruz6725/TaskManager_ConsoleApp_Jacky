@@ -10,21 +10,34 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
     {
         public required string HeaderTitle { get; init; }
         public List<string> Data { get; init; } = new List<string>();
-        public List<string> Options { get; init; } = new List<string>();
         public required string InputFooter { get; init; }
 
         //CONSTRUCTORS
-        public MenuComponent() { }
-        public MenuComponent(string headerTitle, List<string> data, List<string> options, string inputFooter) { }
-        public MenuComponent(string headerTitle, List<string> data, string inputFooter) { }
-        public MenuComponent(string headerTitle, string inputFooter) { }
-        
+        //public MenuComponent() { }
+
         //METHODS
-        public void Template() { }
-        public virtual void DisplayMenuHeader() { }
+        //Template outlines subsequent order that methods are called
+        public void Template()
+        {
+            DisplayMenuHeader();
+            DisplayData();
+            DisplayOptions();
+            DisplayInputFooter();
+            DisplayInputFooter2();
+            DisplayInputFooter3();
+        }
+        public virtual void DisplayMenuHeader()
+        {
+            Console.WriteLine("===============");
+            Console.WriteLine($"=  {HeaderTitle}  =");
+            Console.WriteLine("===============");
+        }
         public virtual void DisplayData() { }
         public virtual void DisplayOptions() { }   
-        public virtual void DisplayInputFooter() { }
+        public virtual void DisplayInputFooter()
+        {
+            Console.WriteLine(InputFooter);
+        }
         public virtual void DisplayInputFooter2() { }
         public virtual void DisplayInputFooter3() { }
     }
