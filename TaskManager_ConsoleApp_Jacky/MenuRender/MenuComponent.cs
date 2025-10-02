@@ -9,10 +9,8 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
     public abstract class MenuComponent
     {
         public required string HeaderTitle { get; init; }
-        //public List<string> Data { get; init; } = new List<string>();
         public required string InputFooter { get; init; }
 
-        //METHODS
         //Template outlines subsequent order that methods are called
         public void Template()
         {

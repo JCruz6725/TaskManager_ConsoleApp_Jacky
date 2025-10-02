@@ -8,6 +8,7 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
 {
     internal class EditDescriptionMenu : MenuComponent
     {
+        public required string Data { get; set; }
         public override void DisplayData() { }
     }
 }

@@ -8,7 +8,7 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
 {
     internal class MainMenu : MenuComponent
     {
-        public List<TaskItem> Data {  get; init; } = new List<TaskItem>();
+        public required List<TaskItem> Data {  get; init; } 
         public override void DisplayData()
         {
             Console.WriteLine("Current To-Do List:");
@@ -16,7 +16,7 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
                 if (Data[i].Status == "Closed" || Data[i].Status == "closed"){
                     Console.WriteLine($"{i + 1}. [X] {Data[i].Title}");
                 }
-                else{
+                else if (Data[i].Status == "Open" || Data[i].Status == "open"){
                     Console.WriteLine($"{i + 1}. [ ] {Data[i].Title}");
                 }
             }
