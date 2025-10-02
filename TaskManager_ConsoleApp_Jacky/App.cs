@@ -12,10 +12,12 @@ namespace TaskManager_ConsoleApp_Jacky
         TaskRenderer Display = new TaskRenderer();
 
         public void initialize() {
+            /*
             TaskItem task1 = new TaskItem("Task 1", "This is a test", new DateTime(2025/01/01), "closed");
             Manager.InsertTask(task1);
             TaskItem task2 = new TaskItem("Task 2", "I need to eat bananas", new DateTime(2025 / 01 / 02), "open");
             Manager.InsertTask(task2);
+            */
         }
 
         public void MainLoop()

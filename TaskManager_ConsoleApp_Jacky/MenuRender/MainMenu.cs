@@ -8,11 +8,17 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
 {
     internal class MainMenu : MenuComponent
     {
+        public List<TaskItem> Data {  get; init; } = new List<TaskItem>();
         public override void DisplayData()
         {
             Console.WriteLine("Current To-Do List:");
             for (int i = 0; i < Data.Count; i++) {
-                Console.WriteLine($"1. {Data[i]}");
+                if (Data[i].Status == "Closed" || Data[i].Status == "closed"){
+                    Console.WriteLine($"{i + 1}. [X] {Data[i].Title}");
+                }
+                else{
+                    Console.WriteLine($"{i + 1}. [ ] {Data[i].Title}");
+                }
             }
             Console.WriteLine(""); //empty line for seperation
         }
