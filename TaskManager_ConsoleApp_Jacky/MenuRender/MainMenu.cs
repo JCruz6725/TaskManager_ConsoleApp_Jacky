@@ -13,11 +13,11 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
         {
             Console.WriteLine("Current To-Do List:");
             for (int i = 0; i < Data.Count; i++) {
-                if (Data[i].Status == "Closed" || Data[i].Status == "closed"){
-                    Console.WriteLine($"{i + 1}. [X] {Data[i].Title}");
-                }
-                else if (Data[i].Status == "Open" || Data[i].Status == "open"){
+                if (Data[i].isOpen){
                     Console.WriteLine($"{i + 1}. [ ] {Data[i].Title}");
+                }
+                else if (!Data[i].isOpen){
+                    Console.WriteLine($"{i + 1}. [X] {Data[i].Title}");
                 }
             }
             Console.WriteLine(""); //empty line for seperation

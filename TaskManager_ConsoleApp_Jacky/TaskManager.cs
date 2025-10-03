@@ -12,7 +12,10 @@ namespace TaskManager_ConsoleApp_Jacky
 
         public void CreateTask(string title, string Description, DateTime DueDate) { }
         
-        public List<TaskItem> GetAllTask() { return TaskCollection; }
+        public List<TaskItem> GetAllTask() { 
+            var _taskCollection = TaskCollection;
+            return _taskCollection; 
+        }
         /*
         public TaskItem GetTaskByIndex(int taskIndex) { }
         */

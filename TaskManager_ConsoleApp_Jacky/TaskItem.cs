@@ -13,15 +13,27 @@ namespace TaskManager_ConsoleApp_Jacky
         public string Title { get; set; }
         public DateTime DueDate { get; set; }
         public string Description { get; set; }
-        public string Status { get; set; }  
+        public bool isOpen { get; set; }  //Status
 
-        public TaskItem(string title, string description, DateTime dueDate, string status)
+        public TaskItem(string title, string description, DateTime dueDate)
         {
             Id= Guid.NewGuid();
             this.Title = title;
             this.Description = description;
             this.DueDate = dueDate;
-            this.Status = status;
+            isOpen = true;
+            CreatedDate = DateTime.Now;
+        }
+
+
+        //Temporary Overloaded Constructor for Initialization Purposes
+        public TaskItem (string title, string description, DateTime dueDate, bool status)
+        {
+            Id = Guid.NewGuid();
+            this.Title = title;
+            this.Description = description;
+            this.DueDate = dueDate;
+            isOpen = status;
             CreatedDate = DateTime.Now;
         }
     }

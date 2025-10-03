@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,13 +10,17 @@ namespace TaskManager_ConsoleApp_Jacky
     public class App
     {
         TaskManager Manager = new TaskManager();
-        TaskRenderer Display = new TaskRenderer();
+        TaskRenderer Display = new TaskRenderer(); 
+        //TaskRenderer Display;
+        //Buffer buffer;
+
 
         public void initialize() {
-            
-            TaskItem task1 = new TaskItem("Task 1", "This is a test", new DateTime(2025/01/01), "closed");
+            //Display.setbuffer
+
+            TaskItem task1 = new TaskItem("Task 1", "This is a test", new DateTime(2025/01/01), false);
             Manager.InsertTask(task1);
-            TaskItem task2 = new TaskItem("Task 2", "I need to eat bananas", new DateTime(2025 / 01 / 02), "open");
+            TaskItem task2 = new TaskItem("Task 2", "I need to eat bananas", new DateTime(2025 / 01 / 02), true);
             Manager.InsertTask(task2);
             
         }
