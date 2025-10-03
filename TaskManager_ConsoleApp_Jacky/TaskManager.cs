@@ -8,11 +8,15 @@ namespace TaskManager_ConsoleApp_Jacky
 {
     public class TaskManager
     {
-        private List<TaskItem> TaskCollection;
+        private List<TaskItem> TaskCollection = new();
 
         public void CreateTask(string title, string Description, DateTime DueDate) { }
+        
+        public List<TaskItem> GetAllTask() { 
+            var _taskCollection = TaskCollection;
+            return _taskCollection; 
+        }
         /*
-        public List<TaskItem> GetAllTask() { }
         public TaskItem GetTaskByIndex(int taskIndex) { }
         */
         public void EditStatusByIndex(int taskIndex, string newstatus) { }
@@ -20,5 +24,9 @@ namespace TaskManager_ConsoleApp_Jacky
         public void EditTaskDescription(int taskIndex, string newDescription) { }
         public void EditTaskDueDate(int taskIndex, string newDueDate) { }
         /*public TaskItem DeleteByIndex(int taskIndex) { }*/
+
+        
+        //Temporary create/insert function just for initialization purposes
+        public void InsertTask(TaskItem task) { TaskCollection.Add(task); }
     }
 }

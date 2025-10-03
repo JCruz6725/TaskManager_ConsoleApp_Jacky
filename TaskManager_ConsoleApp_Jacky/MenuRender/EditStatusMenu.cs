@@ -8,9 +8,8 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
 {
     internal class EditStatusMenu : MenuComponent
     {
-        public EditStatusMenu(string headerTitle, List<string> data, List<string> options, string inputFooter) { }
+        public required string Data { get; set; }
         public override void DisplayData() { }
         public override void DisplayOptions() { }
-        public override void DisplayInputFooter() { }
     }
 }

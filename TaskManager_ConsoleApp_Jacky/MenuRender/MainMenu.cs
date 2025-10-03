@@ -8,10 +8,26 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
 {
     internal class MainMenu : MenuComponent
     {
-        public MainMenu() { }
-        //public MainMenu(string headerTitle, List<string> data, List<string> options, string inputFooter) { }
-        public override void DisplayData() { }
-        public override void DisplayOptions() { }
-        public override void DisplayInputFooter() { }
+        public required List<TaskItem> Data {  get; init; } 
+        public override void DisplayData()
+        {
+            Console.WriteLine("Current To-Do List:");
+            for (int i = 0; i < Data.Count; i++) {
+                if (Data[i].isOpen){
+                    Console.WriteLine($"{i + 1}. [ ] {Data[i].Title}");
+                }
+                else if (!Data[i].isOpen){
+                    Console.WriteLine($"{i + 1}. [X] {Data[i].Title}");
+                }
+            }
+            Console.WriteLine(""); //empty line for seperation
+        }
+        public override void DisplayOptions()
+        {
+            Console.WriteLine("Other Options:");
+            Console.WriteLine("0. Create New To-Do Item");
+            Console.WriteLine("EXIT. exit");
+            Console.WriteLine(""); //empty line for seperation
+        }
     }
 }

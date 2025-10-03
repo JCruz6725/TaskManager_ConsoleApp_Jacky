@@ -8,8 +8,7 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
 {
     internal class EditDueDateMenu : MenuComponent
     {
-        public EditDueDateMenu(string headerTitle, List<string> data, string inputFooter) { }
+        public required DateTime Data {  get; set; }
         public override void DisplayData() { }
-        public override void DisplayInputFooter() { }
     }
 }

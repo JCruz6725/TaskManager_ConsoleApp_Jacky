@@ -8,9 +8,8 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
 {
     internal class ViewToDoDetailsMenu : MenuComponent
     {
-        public ViewToDoDetailsMenu(string headerTitle, List<string> data, List<string> options, string inputFooter) { }
+        public required TaskItem Data {  get; set; } 
         public override void DisplayData() { }
         public override void DisplayOptions() { }
-        public override void DisplayInputFooter() { }
     }
 }

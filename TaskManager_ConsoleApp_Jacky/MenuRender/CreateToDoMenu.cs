@@ -11,7 +11,7 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
         private string InputFooter2;
         private string InputFooter3;
 
-        public CreateToDoMenu(string headerTitle, string inputFooter, string inputFooter2, string inputFooter3) { }
+        public CreateToDoMenu(string inputFooter2, string inputFooter3) { }
         public override void DisplayInputFooter() { }
         public override void DisplayInputFooter2() { }
         public override void DisplayInputFooter3() { }
