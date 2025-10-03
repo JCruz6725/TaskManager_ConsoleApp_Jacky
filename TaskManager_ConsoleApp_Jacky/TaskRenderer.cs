@@ -23,7 +23,12 @@ namespace TaskManager_ConsoleApp_Jacky
         }
         public void DisplayCreateToDoItem()
         {
-            
+            CurrContext = new CreateToDoMenu("Enter in Task Description:", "Enter in Task Due Date (ex. Jan 1, 2009):")
+            {
+                HeaderTitle = "Create-To Do Item",
+                InputFooter = "Enter in Task Name:"
+            };
+            CurrContext.Template();
         }
         public void DisplayTaskItem(TaskItem taskItem) { }
         public void DisplayEditName(string taskName) { }

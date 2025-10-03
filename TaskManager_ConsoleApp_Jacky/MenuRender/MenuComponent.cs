@@ -23,9 +23,19 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
         }
         public virtual void DisplayMenuHeader()
         {
-            Console.WriteLine("===============");
+            for (int i =0; i<HeaderTitle.Length+6; i++) //Outputs border in relative length to header title length
+            {
+                Console.Write("=");
+            }
+            Console.WriteLine("");
+
             Console.WriteLine($"=  {HeaderTitle}  =");
-            Console.WriteLine("===============");
+
+            for (int i = 0; i < HeaderTitle.Length + 6; i++)
+            {
+                Console.Write("=");
+            }
+            Console.WriteLine("");
         }
         public virtual void DisplayData() { }
         public virtual void DisplayOptions() { }   
