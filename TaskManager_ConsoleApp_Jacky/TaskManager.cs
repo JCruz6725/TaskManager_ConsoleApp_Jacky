@@ -10,7 +10,11 @@ namespace TaskManager_ConsoleApp_Jacky
     {
         private List<TaskItem> TaskCollection = new();
 
-        public void CreateTask(string title, string Description, DateTime DueDate) { }
+        public void CreateTask(string title, string description, string dueDate )
+        {
+            TaskItem task = new TaskItem(title, description, DateTime.Parse(dueDate));
+            TaskCollection.Add(task);
+        }
         
         public List<TaskItem> GetAllTask() { 
             var _taskCollection = TaskCollection;
@@ -26,7 +30,7 @@ namespace TaskManager_ConsoleApp_Jacky
         /*public TaskItem DeleteByIndex(int taskIndex) { }*/
 
         
-        //Temporary create/insert function just for initialization purposes
+        //Temporary insert function just for initialization purposes
         public void InsertTask(TaskItem task) { TaskCollection.Add(task); }
     }
 }

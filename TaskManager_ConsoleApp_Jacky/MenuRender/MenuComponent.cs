@@ -11,6 +11,8 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
         public required string HeaderTitle { get; init; }
         public required string InputFooter { get; init; }
 
+        public Buffer _Buffer {  get; init; }
+
         //Template outlines subsequent order that methods are called
         public void Template()
         {

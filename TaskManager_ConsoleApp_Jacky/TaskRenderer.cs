@@ -11,6 +11,10 @@ namespace TaskManager_ConsoleApp_Jacky
     {
         public MenuComponent CurrContext { get; set; }
 
+        private Buffer _Buffer;
+
+        public TaskRenderer(Buffer _Buffer) { this._Buffer = _Buffer; }
+
 
         public void DisplayMainMenu(List<TaskItem> allTasks) {
 
@@ -26,7 +30,8 @@ namespace TaskManager_ConsoleApp_Jacky
             CurrContext = new CreateToDoMenu("Enter in Task Description:", "Enter in Task Due Date (ex. Jan 1, 2009):")
             {
                 HeaderTitle = "Create-To Do Item",
-                InputFooter = "Enter in Task Name:"
+                InputFooter = "Enter in Task Name:",
+                _Buffer = this._Buffer
             };
             CurrContext.Template();
         }
