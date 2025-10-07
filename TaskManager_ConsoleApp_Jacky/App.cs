@@ -12,25 +12,25 @@ namespace TaskManager_ConsoleApp_Jacky
     public class App
     {
         
-        public TaskManager Manager = new TaskManager();
-        public TaskRenderer Display;
+        public TaskManager taskManager = new TaskManager();
+        public TaskRenderer taskRenderer;
         public Buffer _Buffer;
 
 
         public void initialize() {
-            Display = new TaskRenderer(_Buffer = new Buffer());
+            taskRenderer = new TaskRenderer(_Buffer = new Buffer());
 
             TaskItem task1 = new TaskItem("Task 1", "This is a test", new DateTime(2025/01/01), false);
-            Manager.InsertTask(task1);
+            taskManager.InsertTask(task1);
             TaskItem task2 = new TaskItem("Task 2", "I need to eat bananas", new DateTime(2025 / 01 / 02), true);
-            Manager.InsertTask(task2);
+            taskManager.InsertTask(task2);
             
         }
 
         public void MainLoop()
         {
-            var allTasks = Manager.GetAllTask();
-            Display.DisplayMainMenu(allTasks);
+            var allTasks = taskManager.GetAllTask();
+            taskRenderer.DisplayMainMenu(allTasks);
 
             int taskCount = allTasks.Count();
             string userAction = Console.ReadLine();
@@ -43,13 +43,13 @@ namespace TaskManager_ConsoleApp_Jacky
             {
                 if (num == 0) //create
                 {
-                    Display.DisplayCreateToDoItem();
+                    taskRenderer.DisplayCreateToDoItem();
 
                     //Make sure none of the data we are passing is null
                     if ( _Buffer.createName != null && _Buffer.createDescription != null && _Buffer.createDueDate != null)
                     {
                         //Grab all the data we need from our buffer to create our task
-                        Manager.CreateTask(_Buffer.createName, _Buffer.createDescription, _Buffer.createDueDate);
+                        taskManager.CreateTask(_Buffer.createName, _Buffer.createDescription, _Buffer.createDueDate);
                         _Buffer.clearCreateData(); //Clear our data after we use it
                     }
 

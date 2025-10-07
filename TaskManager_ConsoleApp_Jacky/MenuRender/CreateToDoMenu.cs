@@ -19,30 +19,30 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
         }
         public override void DisplayInputFooter() { 
             Console.WriteLine(InputFooter);
-            string taskName = Console.ReadLine();
+            string userInputName = Console.ReadLine();
 
             //hydrating the buffer with our data to be used later & make sure our data holder is empty
             if (_Buffer.createName == null)
             {
-                _Buffer.createName = taskName;
+                _Buffer.createName = userInputName;
             }
         }
         public override void DisplayInputFooter2() { 
             Console.WriteLine(InputFooter2);
-            string taskDescription = Console.ReadLine();
+            string userInputDescription = Console.ReadLine();
 
             if (_Buffer.createDescription == null)
             {
-                _Buffer.createDescription = taskDescription;
+                _Buffer.createDescription = userInputDescription;
             }
         }
         public override void DisplayInputFooter3() { 
             Console.WriteLine(InputFooter3);
-            string taskDueDate = Console.ReadLine();
+            string userInputDueDate = Console.ReadLine();
 
             if (_Buffer.createDueDate == null)
             {
-                _Buffer.createDueDate = taskDueDate;
+                _Buffer.createDueDate = userInputDueDate;
             }
         }
     }
