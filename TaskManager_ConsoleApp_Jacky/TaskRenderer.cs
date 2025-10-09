@@ -11,6 +11,10 @@ namespace TaskManager_ConsoleApp_Jacky
     {
         public MenuComponent CurrContext { get; set; }
 
+        private Buffer _Buffer;
+
+        public TaskRenderer(Buffer _Buffer) { this._Buffer = _Buffer; }
+
 
         public void DisplayMainMenu(List<TaskItem> allTasks) {
 
@@ -21,7 +25,16 @@ namespace TaskManager_ConsoleApp_Jacky
             CurrContext.Template();
             
         }
-        public void DisplayCreateToDoItem() { }
+        public void DisplayCreateToDoItem()
+        {
+            CurrContext = new CreateToDoMenu("Enter in Task Description:", "Enter in Task Due Date (mm / dd / yyyy) (Press enter to skip):")
+            {
+                HeaderTitle = "Create-To Do Item",
+                InputFooter = "Enter in Task Name:",
+                _Buffer = this._Buffer
+            };
+            CurrContext.Template();
+        }
         public void DisplayTaskItem(TaskItem taskItem) { }
         public void DisplayEditName(string taskName) { }
         public void DisplayEditStatus(string taskStatus) { }

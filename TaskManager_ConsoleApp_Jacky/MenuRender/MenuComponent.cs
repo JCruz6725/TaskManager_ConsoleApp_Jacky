@@ -11,6 +11,8 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
         public required string HeaderTitle { get; init; }
         public required string InputFooter { get; init; }
 
+        public Buffer _Buffer {  get; init; }
+
         //Template outlines subsequent order that methods are called
         public void Template()
         {
@@ -23,9 +25,19 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
         }
         public virtual void DisplayMenuHeader()
         {
-            Console.WriteLine("===============");
+            for (int i =0; i<HeaderTitle.Length+6; i++) //Outputs border in relative length to header title length
+            {
+                Console.Write("=");
+            }
+            Console.WriteLine("");
+
             Console.WriteLine($"=  {HeaderTitle}  =");
-            Console.WriteLine("===============");
+
+            for (int i = 0; i < HeaderTitle.Length + 6; i++)
+            {
+                Console.Write("=");
+            }
+            Console.WriteLine("");
         }
         public virtual void DisplayData() { }
         public virtual void DisplayOptions() { }   
