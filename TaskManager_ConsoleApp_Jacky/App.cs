@@ -58,6 +58,10 @@ namespace TaskManager_ConsoleApp_Jacky
                 }
                 else //view a task number
                 {
+                    Console.Clear();
+                    TaskItem taskUserChose = taskManager.GetTaskByIndex(num-1); //use the number user entered to grab the task associated with it
+                    taskRenderer.DisplayTaskItem(taskUserChose);
+
 
                 }
             }
