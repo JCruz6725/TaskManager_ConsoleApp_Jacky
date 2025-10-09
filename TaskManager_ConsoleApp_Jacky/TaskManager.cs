@@ -28,9 +28,9 @@ namespace TaskManager_ConsoleApp_Jacky
             var _taskCollection = TaskCollection;
             return _taskCollection; 
         }
-        /*
-        public TaskItem GetTaskByIndex(int taskIndex) { }
-        */
+        
+        public TaskItem GetTaskByIndex(int taskIndex) { return TaskCollection[taskIndex]; }
+        
         public void EditStatusByIndex(int taskIndex, string newstatus) { }
         public void EditTaskTitle(int taskIndex, string newTitle) { }
         public void EditTaskDescription(int taskIndex, string newDescription) { }

@@ -36,7 +36,8 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
                 _Buffer.createDescription = userInputDescription;
             }
         }
-        public override void DisplayInputFooter3() { 
+        public override void DisplayInputFooter3()
+        {
             Console.WriteLine(InputFooter3);
             string userInputDueDate = Console.ReadLine();
 
@@ -45,5 +46,6 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
                 _Buffer.createDueDate = userInputDueDate;
             }
         }
+
     }
 }

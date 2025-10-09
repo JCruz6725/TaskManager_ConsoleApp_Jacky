@@ -35,7 +35,9 @@ namespace TaskManager_ConsoleApp_Jacky
             };
             CurrContext.Template();
         }
-        public void DisplayTaskItem(TaskItem taskItem) { }
+        public void DisplayTaskItem(TaskItem taskItem) {
+            CurrContext = new ViewToDoDetailsMenu() { HeaderTitle = ""
+        }
         public void DisplayEditName(string taskName) { }
         public void DisplayEditStatus(string taskStatus) { }
         public void DisplayEditDescription(string taskDescription) { }
