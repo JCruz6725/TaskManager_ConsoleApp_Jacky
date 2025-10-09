@@ -10,14 +10,24 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
     {
         public required TaskItem Data {  get; set; } 
         public override void DisplayData() {
-            string status = Data.isOpen ? "Open" : "Closed"; 
-            Console.WriteLine("Status: " + status);
             Console.WriteLine(Data.Description);
-            Console.WriteLine("Due Date: " + Data.DueDate);
+
+            string status = Data.isOpen ? "Open" : "Closed"; //Processing our bool status into a string
+            Console.WriteLine("Status: " + status);
+
+            if (Data.DueDate != null)
+            {
+                Console.WriteLine("Due Date: " + Data.DueDate);
+            }
+            else
+            {
+                Console.WriteLine("(No Current Due Date)");
+            }
+
             Console.WriteLine();
         }
         public override void DisplayOptions() {
-            Console.WriteLine("Options:");
+            base.DisplayOptions();
             Console.WriteLine("1. Edit Name");
             Console.WriteLine("2. Edit Status");
             Console.WriteLine("3. Edit Description");
@@ -25,6 +35,13 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
             Console.WriteLine("5. Remove Task");
             Console.WriteLine("RETURN. Return to Main Menu");
             Console.WriteLine();
+        }
+
+        public override void DisplayInputFooter()
+        {
+            base.DisplayInputFooter();
+            _Buffer.ViewTaskUserChoice = Console.ReadLine();
+
         }
     }
 }
