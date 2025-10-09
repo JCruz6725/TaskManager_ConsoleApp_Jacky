@@ -27,7 +27,7 @@ namespace TaskManager_ConsoleApp_Jacky
         }
         public void DisplayCreateToDoItem(){
 
-            CurrContext = new CreateToDoMenu("Enter in Task Description:", "Enter in Task Due Date (mm / dd / yyyy) (Press enter to skip):") {
+            CurrContext = new CreateToDoMenu("Enter in Task Description:", "Enter in Task Due Date (mm/dd/yyyy) (Press enter to skip):") {
                                               HeaderTitle = "Create-To Do Item",
                                               InputFooter = "Enter in Task Name:",
                                               _Buffer = this._Buffer};
