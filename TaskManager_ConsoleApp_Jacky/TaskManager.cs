@@ -29,9 +29,18 @@ namespace TaskManager_ConsoleApp_Jacky
             return _taskCollection; 
         }
         
-        public TaskItem GetTaskByIndex(int taskIndex) { return TaskCollection[taskIndex]; }
+        public TaskItem GetTaskByIndex(int taskIndex) { 
+            TaskItem task = TaskCollection[taskIndex];
+            return task; 
+        }
         
-        public void EditStatusByIndex(int taskIndex, string newstatus) { }
+        public void EditStatusByIndex(int taskIndex, string newstatus) {
+
+            bool status = newstatus.Equals("1") ? true : false; //Based on TUI, 1=Open 2=Closed
+
+            TaskCollection[taskIndex].isOpen = status;
+        }
+
         public void EditTaskTitle(int taskIndex, string newTitle) { }
         public void EditTaskDescription(int taskIndex, string newDescription) { }
         public void EditTaskDueDate(int taskIndex, string newDueDate) { }

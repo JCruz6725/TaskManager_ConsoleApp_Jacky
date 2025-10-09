@@ -40,7 +40,10 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
             Console.WriteLine("");
         }
         public virtual void DisplayData() { }
-        public virtual void DisplayOptions() { }   
+        public virtual void DisplayOptions() 
+        { 
+            Console.WriteLine("Options: "); 
+        }   
         public virtual void DisplayInputFooter()
         {
             Console.WriteLine(InputFooter);

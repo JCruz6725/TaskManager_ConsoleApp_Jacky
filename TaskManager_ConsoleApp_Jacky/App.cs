@@ -20,9 +20,9 @@ namespace TaskManager_ConsoleApp_Jacky
         public void initialize() {
             taskRenderer = new TaskRenderer(_Buffer = new Buffer());
 
-            TaskItem task1 = new TaskItem("Task 1", "This is a test", false) { DueDate = new DateTime(2025, 1, 1, 0, 0, 0, 0, 0) };
+            TaskItem task1 = new TaskItem("Testing Task 1", "My description for this task is that i need to eat bananas :)", false) { DueDate = new DateTime(2025, 1, 1, 0, 0, 0, 0, 0) };
             taskManager.InsertTask(task1);
-            TaskItem task2 = new TaskItem("Task 2", "I need to eat bananas", true);
+            TaskItem task2 = new TaskItem("Testing Task 2", "My description is supposed to explain more details about what this task is about and what I need to do", true);
             taskManager.InsertTask(task2);
             
         }
@@ -58,6 +58,33 @@ namespace TaskManager_ConsoleApp_Jacky
                 }
                 else //view a task number
                 {
+                    Console.Clear();
+                    TaskItem taskUserChose = taskManager.GetTaskByIndex(num-1); //use the number user entered to grab the task associated with it
+                    
+                    taskRenderer.DisplayTaskItem(taskUserChose);
+
+                    string editTaskChoice = _Buffer.ViewTaskUserChoice;
+
+                    switch (editTaskChoice) {
+                        case "EXIT":
+                            MainLoop(); 
+                            break;
+                        case "1": //Edit Name
+                            break;
+                        case "2": //Edit Status
+                            taskRenderer.DisplayEditStatus(taskUserChose.isOpen);
+                            taskManager.EditStatusByIndex(num - 1, _Buffer.newStatus);
+                            break;
+                        case "3": //Edit Descripion
+                            break;
+                        case "4": //Edit Due Date
+                            break;
+                        case "5": //Remove Task
+                            break;
+                    }
+
+                    Console.Clear();
+                    MainLoop();
 
                 }
             }
@@ -65,7 +92,7 @@ namespace TaskManager_ConsoleApp_Jacky
             {
                 Console.Clear();
                 Console.WriteLine("Invalid input, try again.");
-                Console.WriteLine("");
+                Console.WriteLine();
                 MainLoop();
             }
         }
