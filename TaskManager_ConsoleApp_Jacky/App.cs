@@ -20,9 +20,9 @@ namespace TaskManager_ConsoleApp_Jacky
         public void initialize() {
             taskRenderer = new TaskRenderer(_Buffer = new Buffer());
 
-            TaskItem task1 = new TaskItem("Task 1", "This is a test", new DateTime(2025/01/01), false);
+            TaskItem task1 = new TaskItem("Task 1", "This is a test", false) { DueDate = new DateTime(2025 / 01 / 01) };
             taskManager.InsertTask(task1);
-            TaskItem task2 = new TaskItem("Task 2", "I need to eat bananas", new DateTime(2025 / 01 / 02), true);
+            TaskItem task2 = new TaskItem("Task 2", "I need to eat bananas", true);
             taskManager.InsertTask(task2);
             
         }

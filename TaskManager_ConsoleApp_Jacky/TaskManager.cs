@@ -12,7 +12,15 @@ namespace TaskManager_ConsoleApp_Jacky
 
         public void CreateTask(string title, string description, string dueDate )
         {
-            TaskItem task = new TaskItem(title, description, DateTime.Parse(dueDate));
+            TaskItem task;
+            if (String.IsNullOrEmpty(dueDate))
+            {
+                task = new TaskItem(title, description);
+            }
+            else
+            {
+                task = new TaskItem(title, description) { DueDate = DateTime.Parse(dueDate) };
+            }
             TaskCollection.Add(task);
         }
         
