@@ -20,14 +20,13 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
                     Console.WriteLine($"{i + 1}. [X] {Data[i].Title}");
                 }
             }
-            Console.WriteLine(""); //empty line for seperation
+            Console.WriteLine(); //empty line for seperation
         }
         public override void DisplayOptions()
         {
             Console.WriteLine("Other Options:");
             Console.WriteLine("0. Create New To-Do Item");
             Console.WriteLine("EXIT. exit");
-            Console.WriteLine(""); //empty line for seperation
         }
     }
 }

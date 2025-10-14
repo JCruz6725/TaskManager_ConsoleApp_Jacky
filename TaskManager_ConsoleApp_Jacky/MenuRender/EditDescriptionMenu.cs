@@ -11,9 +11,7 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
         public required string Data { get; set; }
         public override void DisplayData() {
             Console.WriteLine("Current Description:");
-            Console.WriteLine();
             Console.WriteLine(Data);
-            Console.WriteLine();
         }
         public override void DisplayInputFooter()
         {

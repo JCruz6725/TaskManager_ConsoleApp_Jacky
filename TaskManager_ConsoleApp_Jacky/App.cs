@@ -66,7 +66,7 @@ namespace TaskManager_ConsoleApp_Jacky
                     string editTaskChoice = _Buffer.ViewTaskUserChoice;
 
                     switch (editTaskChoice) {
-                        case "EXIT":
+                        case "RETURN":
                             MainLoop(); 
                             break;
                         case "1": //Edit Name

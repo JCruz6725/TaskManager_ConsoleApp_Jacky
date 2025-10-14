@@ -27,14 +27,13 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
             Console.WriteLine();
         }
         public override void DisplayOptions() {
-            base.DisplayOptions();
+            Console.WriteLine("Options:");
             Console.WriteLine("1. Edit Name");
             Console.WriteLine("2. Edit Status");
             Console.WriteLine("3. Edit Description");
             Console.WriteLine("4. Edit Due Date");
             Console.WriteLine("5. Remove Task");
             Console.WriteLine("RETURN. Return to Main Menu");
-            Console.WriteLine();
         }
 
         public override void DisplayInputFooter()
