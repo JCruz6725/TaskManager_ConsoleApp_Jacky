@@ -64,7 +64,13 @@ namespace TaskManager_ConsoleApp_Jacky
                                                     _Buffer = this._Buffer};
             CurrContext.Template();
         }
-        public void DisplayEditDueDate(DateTime taskDueDate) { }
+        public void DisplayEditDueDate(DateTime? taskDueDate) {
+            CurrContext = new EditDueDateMenu() { HeaderTitle = "Edit Due Date",
+                                                  InputFooter = "Enter New Due Date (mm/dd/yyyy)",
+                                                  Data = taskDueDate,
+                                                  _Buffer =this._Buffer};
+            CurrContext.Template();
+        }
         public void DisplayRemove(string taskName) { }  
     }
 }

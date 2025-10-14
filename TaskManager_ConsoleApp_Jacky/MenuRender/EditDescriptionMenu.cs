@@ -13,6 +13,7 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
             Console.WriteLine("Current Description:");
             Console.WriteLine();
             Console.WriteLine(Data);
+            Console.WriteLine();
         }
         public override void DisplayInputFooter()
         {

@@ -82,6 +82,15 @@ namespace TaskManager_ConsoleApp_Jacky
                             taskManager.EditTaskDescription(num - 1, _Buffer.newDescription);
                             break;
                         case "4": //Edit Due Date
+                            if (taskUserChose.DueDate == null)
+                            {
+                                taskRenderer.DisplayEditDueDate(null);
+                            }
+                            else
+                            {
+                                taskRenderer.DisplayEditDueDate((DateTime)taskUserChose.DueDate);
+                            }
+                            taskManager.EditTaskDueDate(num - 1, _Buffer.newDueDate);
                             break;
                         case "5": //Remove Task
                             break;
