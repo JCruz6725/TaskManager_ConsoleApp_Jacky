@@ -66,7 +66,7 @@ namespace TaskManager_ConsoleApp_Jacky
         }
         public void DisplayEditDueDate(DateTime? taskDueDate) {
             CurrContext = new EditDueDateMenu() { HeaderTitle = "Edit Due Date",
-                                                  InputFooter = "Enter New Due Date (mm/dd/yyyy)",
+                                                  InputFooter = "Enter New Due Date (mm/dd/yyyy)(Or Press Enter to leave empty)",
                                                   Data = taskDueDate,
                                                   _Buffer =this._Buffer};
             CurrContext.Template();
