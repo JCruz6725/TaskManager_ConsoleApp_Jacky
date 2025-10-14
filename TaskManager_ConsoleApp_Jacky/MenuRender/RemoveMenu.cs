@@ -12,6 +12,7 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
         public override void DisplayData()
         {
             Console.WriteLine(Data + " Successfully Removed");
+            Console.WriteLine();
         }
         public override void DisplayInputFooter()
         {
