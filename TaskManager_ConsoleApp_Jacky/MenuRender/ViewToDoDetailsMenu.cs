@@ -34,6 +34,7 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
             Console.WriteLine("4. Edit Due Date");
             Console.WriteLine("5. Remove Task");
             Console.WriteLine("RETURN. Return to Main Menu");
+            Console.WriteLine();
         }
 
         public override void DisplayInputFooter()

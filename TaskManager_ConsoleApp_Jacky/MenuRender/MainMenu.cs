@@ -27,6 +27,7 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
             Console.WriteLine("Other Options:");
             Console.WriteLine("0. Create New To-Do Item");
             Console.WriteLine("EXIT. exit");
+            Console.WriteLine();
         }
     }
 }
