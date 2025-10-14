@@ -56,7 +56,14 @@ namespace TaskManager_ConsoleApp_Jacky
                                                  _Buffer = this._Buffer};
             CurrContext.Template(); 
         }
-        public void DisplayEditDescription(string taskDescription) { }
+        public void DisplayEditDescription(string taskDescription) {
+        
+            CurrContext = new EditDescriptionMenu() { HeaderTitle = "Edit Description",
+                                                    InputFooter = "Enter New Description:",
+                                                    Data = taskDescription,
+                                                    _Buffer = this._Buffer};
+            CurrContext.Template();
+        }
         public void DisplayEditDueDate(DateTime taskDueDate) { }
         public void DisplayRemove(string taskName) { }  
     }

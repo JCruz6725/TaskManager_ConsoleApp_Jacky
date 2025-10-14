@@ -45,7 +45,10 @@ namespace TaskManager_ConsoleApp_Jacky
 
             TaskCollection[taskIndex].Title = newTitle;
         }
-        public void EditTaskDescription(int taskIndex, string newDescription) { }
+        public void EditTaskDescription(int taskIndex, string newDescription) {
+
+            TaskCollection[taskIndex].Description = newDescription;
+        }
         public void EditTaskDueDate(int taskIndex, string newDueDate) { }
         /*public TaskItem DeleteByIndex(int taskIndex) { }*/
 

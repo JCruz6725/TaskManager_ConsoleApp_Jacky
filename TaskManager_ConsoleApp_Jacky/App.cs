@@ -78,6 +78,8 @@ namespace TaskManager_ConsoleApp_Jacky
                             taskManager.EditStatusByIndex(num - 1, _Buffer.newStatus);
                             break;
                         case "3": //Edit Descripion
+                            taskRenderer.DisplayEditDescription(taskUserChose.Description);
+                            taskManager.EditTaskDescription(num - 1, _Buffer.newDescription);
                             break;
                         case "4": //Edit Due Date
                             break;
