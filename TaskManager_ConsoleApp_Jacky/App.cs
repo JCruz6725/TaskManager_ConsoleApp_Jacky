@@ -66,7 +66,7 @@ namespace TaskManager_ConsoleApp_Jacky
                     string editTaskChoice = _Buffer.ViewTaskUserChoice;
 
                     switch (editTaskChoice) {
-                        case "EXIT":
+                        case "RETURN":
                             MainLoop(); 
                             break;
                         case "1": //Edit Name
@@ -80,6 +80,12 @@ namespace TaskManager_ConsoleApp_Jacky
                         case "4": //Edit Due Date
                             break;
                         case "5": //Remove Task
+                            taskRenderer.DisplayRemove(taskUserChose.Title);
+                            taskManager.DeleteByIndex(num - 1);
+                            break;
+                        default:
+                            Console.WriteLine("Invalid Input. Press Enter to Return to Main Menu");
+                            Console.ReadLine();
                             break;
                     }
 
