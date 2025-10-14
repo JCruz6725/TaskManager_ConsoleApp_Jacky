@@ -28,10 +28,19 @@ namespace TaskManager_ConsoleApp_Jacky
             var _taskCollection = TaskCollection;
             return _taskCollection; 
         }
-        /*
-        public TaskItem GetTaskByIndex(int taskIndex) { }
-        */
-        public void EditStatusByIndex(int taskIndex, string newstatus) { }
+        
+        public TaskItem GetTaskByIndex(int taskIndex) { 
+            TaskItem task = TaskCollection[taskIndex];
+            return task; 
+        }
+        
+        public void EditStatusByIndex(int taskIndex, string newstatus) {
+
+            bool status = newstatus.Equals("1"); //? true : false; //Based on TUI, 1=Open 2=Closed
+
+            TaskCollection[taskIndex].isOpen = status;
+        }
+
         public void EditTaskTitle(int taskIndex, string newTitle) { }
         public void EditTaskDescription(int taskIndex, string newDescription) { }
         public void EditTaskDueDate(int taskIndex, string newDueDate) { }
