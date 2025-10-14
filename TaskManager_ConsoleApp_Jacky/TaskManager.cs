@@ -41,7 +41,10 @@ namespace TaskManager_ConsoleApp_Jacky
             TaskCollection[taskIndex].isOpen = status;
         }
 
-        public void EditTaskTitle(int taskIndex, string newTitle) { }
+        public void EditTaskTitle(int taskIndex, string newTitle) {
+
+            TaskCollection[taskIndex].Title = newTitle;
+        }
         public void EditTaskDescription(int taskIndex, string newDescription) { }
         public void EditTaskDueDate(int taskIndex, string newDueDate) { }
         /*public TaskItem DeleteByIndex(int taskIndex) { }*/

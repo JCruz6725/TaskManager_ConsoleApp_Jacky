@@ -70,6 +70,8 @@ namespace TaskManager_ConsoleApp_Jacky
                             MainLoop(); 
                             break;
                         case "1": //Edit Name
+                            taskRenderer.DisplayEditName(taskUserChose.Title);
+                            taskManager.EditTaskTitle(num - 1, _Buffer.newName);
                             break;
                         case "2": //Edit Status
                             taskRenderer.DisplayEditStatus(taskUserChose.isOpen);

@@ -41,7 +41,13 @@ namespace TaskManager_ConsoleApp_Jacky
                                                       _Buffer = this._Buffer};
             CurrContext.Template();
         }
-        public void DisplayEditName(string taskName) { }
+        public void DisplayEditName(string taskName) {
+            CurrContext = new EditNameMenu() { HeaderTitle = "Edit Name", 
+                                               InputFooter = "Enter New To-Do Item Name:", 
+                                               Data = taskName, 
+                                               _Buffer = this._Buffer };
+            CurrContext.Template(); 
+        }
         public void DisplayEditStatus(bool taskStatus) {
 
             CurrContext = new EditStatusMenu() { HeaderTitle = "Edit Status", 
