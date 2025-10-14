@@ -25,6 +25,7 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
             {
                 _Buffer.createName = Console.ReadLine();
             }
+            Console.WriteLine();
         }
         public override void DisplayInputFooter2() { 
             Console.WriteLine(InputFooter2); //"Enter in Task Description"
@@ -33,6 +34,7 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
             {
                 _Buffer.createDescription = Console.ReadLine();
             }
+            Console.WriteLine();
         }
         public override void DisplayInputFooter3()
         {

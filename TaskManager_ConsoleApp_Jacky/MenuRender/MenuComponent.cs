@@ -44,7 +44,6 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
  
         public virtual void DisplayInputFooter()
         {
-            Console.WriteLine();
             Console.WriteLine(InputFooter);
         }
         public virtual void DisplayInputFooter2() { }

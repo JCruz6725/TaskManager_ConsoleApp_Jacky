@@ -18,6 +18,7 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
             {
                 Console.WriteLine("(No Current Due Date)");
             }
+            Console.WriteLine();
         }
         public override void DisplayInputFooter()
         {

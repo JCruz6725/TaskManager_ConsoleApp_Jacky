@@ -19,6 +19,7 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
             Console.WriteLine("Options:");
             Console.WriteLine("1. Open");
             Console.WriteLine("2. Closed");
+            Console.WriteLine();
         }
         public override void DisplayInputFooter()
         {
