@@ -81,7 +81,7 @@ namespace TaskManager_ConsoleApp_Jacky
                             break;
                         case "5": //Remove Task
                             taskRenderer.DisplayRemove(taskUserChose.Title);
-                            taskManager.DeleteByIndex(num - 1);
+                            TaskItem tempTask = taskManager.DeleteByIndex(num - 1); //returns the task that was just deleted (for future purposes)
                             break;
                         default:
                             Console.WriteLine("Invalid Input. Press Enter to Return to Main Menu");
