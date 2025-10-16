@@ -61,7 +61,12 @@ namespace TaskManager_ConsoleApp_Jacky
                 TaskCollection[taskIndex].DueDate = DateTime.Parse(newDueDate);
             }
         }
-        /*public TaskItem DeleteByIndex(int taskIndex) { }*/
+        public TaskItem DeleteByIndex(int taskIndex) {
+            
+            TaskItem temptask = TaskCollection[taskIndex];  
+            TaskCollection.RemoveAt(taskIndex);
+            return temptask;
+        }
 
         
         //Temporary insert function just for initialization purposes

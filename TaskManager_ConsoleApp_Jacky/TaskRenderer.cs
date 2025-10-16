@@ -71,6 +71,12 @@ namespace TaskManager_ConsoleApp_Jacky
                                                   _Buffer =this._Buffer};
             CurrContext.Template();
         }
-        public void DisplayRemove(string taskName) { }  
+        public void DisplayRemove(string taskName) {
+            CurrContext = new RemoveMenu() { HeaderTitle = "Remove", 
+                                             InputFooter = "Press Enter to Return to Main Menu", 
+                                             Data = taskName, 
+                                             _Buffer = this._Buffer};
+            CurrContext.Template(); 
+        }  
     }
 }

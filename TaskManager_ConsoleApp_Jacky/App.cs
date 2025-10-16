@@ -93,6 +93,12 @@ namespace TaskManager_ConsoleApp_Jacky
                             taskManager.EditTaskDueDate(num - 1, _Buffer.newDueDate);
                             break;
                         case "5": //Remove Task
+                            taskRenderer.DisplayRemove(taskUserChose.Title);
+                            TaskItem tempTask = taskManager.DeleteByIndex(num - 1); //returns the task that was just deleted (for future purposes)
+                            break;
+                        default:
+                            Console.WriteLine("Invalid Input. Press Enter to Return to Main Menu");
+                            Console.ReadLine();
                             break;
                     }
 
