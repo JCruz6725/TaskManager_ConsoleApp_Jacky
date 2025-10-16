@@ -35,7 +35,7 @@ namespace TaskManager_ConsoleApp_Jacky
             int taskCount = allTasks.Count();
             string userAction = Console.ReadLine();
 
-            if (userAction == "EXIT" )
+            if (userAction == Constant.EXIT)
             {
                 return;
             }
