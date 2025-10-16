@@ -16,7 +16,7 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
             Console.WriteLine();
         }
         public override void DisplayOptions() {
-            base.DisplayOptions();
+            Console.WriteLine("Options:");
             Console.WriteLine("1. Open");
             Console.WriteLine("2. Closed");
             Console.WriteLine();

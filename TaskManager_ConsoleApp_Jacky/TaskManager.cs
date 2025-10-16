@@ -44,7 +44,12 @@ namespace TaskManager_ConsoleApp_Jacky
         public void EditTaskTitle(int taskIndex, string newTitle) { }
         public void EditTaskDescription(int taskIndex, string newDescription) { }
         public void EditTaskDueDate(int taskIndex, string newDueDate) { }
-        /*public TaskItem DeleteByIndex(int taskIndex) { }*/
+        public TaskItem DeleteByIndex(int taskIndex) {
+            
+            TaskItem temptask = TaskCollection[taskIndex];  
+            TaskCollection.RemoveAt(taskIndex);
+            return temptask;
+        }
 
         
         //Temporary insert function just for initialization purposes

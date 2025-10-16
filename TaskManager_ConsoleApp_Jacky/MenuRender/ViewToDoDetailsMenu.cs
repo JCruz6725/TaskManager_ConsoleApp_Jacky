@@ -27,7 +27,7 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
             Console.WriteLine();
         }
         public override void DisplayOptions() {
-            base.DisplayOptions();
+            Console.WriteLine("Options:");
             Console.WriteLine("1. Edit Name");
             Console.WriteLine("2. Edit Status");
             Console.WriteLine("3. Edit Description");
