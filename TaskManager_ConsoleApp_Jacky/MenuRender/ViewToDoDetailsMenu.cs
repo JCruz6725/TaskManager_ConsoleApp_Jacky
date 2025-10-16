@@ -28,12 +28,12 @@ namespace TaskManager_ConsoleApp_Jacky.MenuRender
         }
         public override void DisplayOptions() {
             Console.WriteLine("Options:");
-            Console.WriteLine("1. Edit Name");
-            Console.WriteLine("2. Edit Status");
-            Console.WriteLine("3. Edit Description");
-            Console.WriteLine("4. Edit Due Date");
-            Console.WriteLine("5. Remove Task");
-            Console.WriteLine("RETURN. Return to Main Menu");
+            Console.WriteLine($"{Constant.EDIT_NAME_NUM}. Edit Name");
+            Console.WriteLine($"{Constant.EDIT_STATUS_NUM}. Edit Status");
+            Console.WriteLine($"{Constant.EDIT_DESCRIPTION_NUM}. Edit Description");
+            Console.WriteLine($"{Constant.EDIT_DUE_DATE_NUM}. Edit Due Date");
+            Console.WriteLine($"{Constant.REMOVE_NUM}. Remove Task");
+            Console.WriteLine($"{Constant.RETURN}. Return to Main Menu");
             Console.WriteLine();
         }
 

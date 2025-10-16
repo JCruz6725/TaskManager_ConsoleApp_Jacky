@@ -7,6 +7,7 @@
             App app = new App();
             app.initialize();
             app.MainLoop();
+            app.Shutdown();
         }
     }
 }

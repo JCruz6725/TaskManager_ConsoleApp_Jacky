@@ -37,9 +37,11 @@ namespace TaskManager_ConsoleApp_Jacky
         
         public void EditStatusByIndex(int taskIndex, string newstatus) {
 
-            bool status = newstatus.Equals("1"); //? true : false; //Based on TUI, 1=Open 2=Closed
+            if (newstatus.Equals(Constant.OPEN))
+                TaskCollection[taskIndex].isOpen = true;
+            else if (newstatus.Equals(Constant.CLOSE))
+                TaskCollection[taskIndex].isOpen = false;
 
-            TaskCollection[taskIndex].isOpen = status;
         }
 
         public void EditTaskTitle(int taskIndex, string newTitle) {
