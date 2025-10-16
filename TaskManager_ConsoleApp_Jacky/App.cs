@@ -35,13 +35,13 @@ namespace TaskManager_ConsoleApp_Jacky
             int taskCount = allTasks.Count();
             string userAction = Console.ReadLine();
 
-            if (userAction == "EXIT")
+            if (userAction == Constant.EXIT)
             {
                 return;
             }
-            else if (int.TryParse(userAction, out int num) && num >= 0 && num <= taskCount) //Checks if input is a number && is in range of the number of tasks available
+            else if (int.TryParse(userAction, out int taskChoiceIndex) && taskChoiceIndex >= 0 && taskChoiceIndex <= taskCount) //Checks if input is a number && is in range of the number of tasks available
             {
-                if (num == 0) //create
+                if (taskChoiceIndex == Constant.CREATE) 
                 {
                     taskRenderer.DisplayCreateToDoItem();
 
@@ -59,29 +59,42 @@ namespace TaskManager_ConsoleApp_Jacky
                 else //view a task number
                 {
                     Console.Clear();
-                    TaskItem taskUserChose = taskManager.GetTaskByIndex(num-1); //use the number user entered to grab the task associated with it
+                    TaskItem taskUserChose = taskManager.GetTaskByIndex(taskChoiceIndex-1); //use the number user entered to grab the task associated with it
                     
                     taskRenderer.DisplayTaskItem(taskUserChose);
 
                     string editTaskChoice = _Buffer.ViewTaskUserChoice;
 
                     switch (editTaskChoice) {
-                        case "RETURN":
-                            MainLoop(); 
+                        case Constant.RETURN:
+                            Console.Clear();
                             break;
-                        case "1": //Edit Name
+                        case Constant.EDIT_NAME_NUM: 
+                            taskRenderer.DisplayEditName(taskUserChose.Title);
+                            taskManager.EditTaskTitle(taskChoiceIndex - 1, _Buffer.newName);
                             break;
-                        case "2": //Edit Status
+                        case Constant.EDIT_STATUS_NUM: 
                             taskRenderer.DisplayEditStatus(taskUserChose.isOpen);
-                            taskManager.EditStatusByIndex(num - 1, _Buffer.newStatus);
+                            taskManager.EditStatusByIndex(taskChoiceIndex - 1, _Buffer.newStatus);
                             break;
-                        case "3": //Edit Descripion
+                        case Constant.EDIT_DESCRIPTION_NUM: 
+                            taskRenderer.DisplayEditDescription(taskUserChose.Description);
+                            taskManager.EditTaskDescription(taskChoiceIndex - 1, _Buffer.newDescription);
                             break;
-                        case "4": //Edit Due Date
+                        case Constant.EDIT_DUE_DATE_NUM: 
+                            if (taskUserChose.DueDate == null)
+                            {
+                                taskRenderer.DisplayEditDueDate(null);
+                            }
+                            else
+                            {
+                                taskRenderer.DisplayEditDueDate((DateTime)taskUserChose.DueDate);
+                            }
+                            taskManager.EditTaskDueDate(taskChoiceIndex - 1, _Buffer.newDueDate);
                             break;
-                        case "5": //Remove Task
+                        case Constant.REMOVE_NUM: 
                             taskRenderer.DisplayRemove(taskUserChose.Title);
-                            TaskItem tempTask = taskManager.DeleteByIndex(num - 1); //returns the task that was just deleted (for future purposes)
+                            TaskItem tempTask = taskManager.DeleteByIndex(taskChoiceIndex - 1); //returns the task that was just deleted (for future purposes)
                             break;
                         default:
                             Console.WriteLine("Invalid Input. Press Enter to Return to Main Menu");
@@ -91,7 +104,6 @@ namespace TaskManager_ConsoleApp_Jacky
 
                     Console.Clear();
                     MainLoop();
-
                 }
             }
             else 
@@ -103,6 +115,12 @@ namespace TaskManager_ConsoleApp_Jacky
             }
         }
 
-        public void Shutdown() { }
+        public void Shutdown() { 
+            // SAVE TO FILE
+            // OTHER OPERATIONS
+        
+            Environment.Exit(0);
+        
+        }
     }
 }

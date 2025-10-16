@@ -41,7 +41,13 @@ namespace TaskManager_ConsoleApp_Jacky
                                                       _Buffer = this._Buffer};
             CurrContext.Template();
         }
-        public void DisplayEditName(string taskName) { }
+        public void DisplayEditName(string taskName) {
+            CurrContext = new EditNameMenu() { HeaderTitle = "Edit Name", 
+                                               InputFooter = "Enter New To-Do Item Name:", 
+                                               Data = taskName, 
+                                               _Buffer = this._Buffer };
+            CurrContext.Template(); 
+        }
         public void DisplayEditStatus(bool taskStatus) {
 
             CurrContext = new EditStatusMenu() { HeaderTitle = "Edit Status", 
@@ -50,8 +56,21 @@ namespace TaskManager_ConsoleApp_Jacky
                                                  _Buffer = this._Buffer};
             CurrContext.Template(); 
         }
-        public void DisplayEditDescription(string taskDescription) { }
-        public void DisplayEditDueDate(DateTime taskDueDate) { }
+        public void DisplayEditDescription(string taskDescription) {
+        
+            CurrContext = new EditDescriptionMenu() { HeaderTitle = "Edit Description",
+                                                    InputFooter = "Enter New Description:",
+                                                    Data = taskDescription,
+                                                    _Buffer = this._Buffer};
+            CurrContext.Template();
+        }
+        public void DisplayEditDueDate(DateTime? taskDueDate) {
+            CurrContext = new EditDueDateMenu() { HeaderTitle = "Edit Due Date",
+                                                  InputFooter = "Enter New Due Date (mm/dd/yyyy)(Or Press Enter to leave empty)",
+                                                  Data = taskDueDate,
+                                                  _Buffer =this._Buffer};
+            CurrContext.Template();
+        }
         public void DisplayRemove(string taskName) {
             CurrContext = new RemoveMenu() { HeaderTitle = "Remove", 
                                              InputFooter = "Press Enter to Return to Main Menu", 

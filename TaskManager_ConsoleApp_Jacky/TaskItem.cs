@@ -11,7 +11,7 @@ namespace TaskManager_ConsoleApp_Jacky
         public Guid Id { get; set; }
         public DateTime CreatedDate { get; set; }
         public string Title { get; set; }
-        public DateTime? DueDate { get; init; } = null;
+        public DateTime? DueDate { get; set; } = null;
         public string Description { get; set; }
         public bool isOpen { get; set; }  //Status
 

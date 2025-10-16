@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,14 +37,32 @@ namespace TaskManager_ConsoleApp_Jacky
         
         public void EditStatusByIndex(int taskIndex, string newstatus) {
 
-            bool status = newstatus.Equals("1"); //? true : false; //Based on TUI, 1=Open 2=Closed
+            if (newstatus.Equals(Constant.OPEN))
+                TaskCollection[taskIndex].isOpen = true;
+            else if (newstatus.Equals(Constant.CLOSE))
+                TaskCollection[taskIndex].isOpen = false;
 
-            TaskCollection[taskIndex].isOpen = status;
         }
 
-        public void EditTaskTitle(int taskIndex, string newTitle) { }
-        public void EditTaskDescription(int taskIndex, string newDescription) { }
-        public void EditTaskDueDate(int taskIndex, string newDueDate) { }
+        public void EditTaskTitle(int taskIndex, string newTitle) {
+
+            TaskCollection[taskIndex].Title = newTitle;
+        }
+        public void EditTaskDescription(int taskIndex, string newDescription) {
+
+            TaskCollection[taskIndex].Description = newDescription;
+        }
+        public void EditTaskDueDate(int taskIndex, string newDueDate) {
+
+            if (String.IsNullOrEmpty(newDueDate))
+            {
+                TaskCollection[taskIndex].DueDate = null;
+            }
+            else
+            {
+                TaskCollection[taskIndex].DueDate = DateTime.Parse(newDueDate);
+            }
+        }
         public TaskItem DeleteByIndex(int taskIndex) {
             
             TaskItem temptask = TaskCollection[taskIndex];  
